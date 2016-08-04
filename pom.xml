@@ -134,7 +134,6 @@ limitations under the License.
                         </goals>
                         <!-- the following configuration will invoke wsimport once for each wsdl document -->
                         <configuration>
-                            <sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
                             <wsdlUrls>
                                 <wsdlUrl>${wsdl.url}</wsdlUrl>
                             </wsdlUrls>
