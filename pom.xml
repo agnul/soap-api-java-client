@@ -23,7 +23,7 @@ limitations under the License.
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.contactlab.api</groupId>
     <artifactId>client</artifactId>
-    <version>2.13</version>
+    <version>2.13.1-SNAPSHOT</version>
     <name>ContactLab SOAP API Java Client</name>
     <description>The Java Client for ContactLab SOAP API</description>
     <url>http://github.com/contactlab/soap-api-java-client.git</url>
@@ -37,6 +37,11 @@ limitations under the License.
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <wsdl.url>https://soap.contactlab.it/soap/services?wsdl</wsdl.url>
     </properties>
+
+    <scm>
+         <developerConnection>scm:git:file://localhost/home/developer/dev/apisoap/client-apisoap</developerConnection>
+         <tag>HEAD</tag>
+    </scm>
 
     <licenses>
         <license>
@@ -56,6 +61,37 @@ limitations under the License.
             <properties>
                 <additionalparam>-Xdoclint:none</additionalparam>
             </properties>
+        </profile>
+        <profile>
+             <id>release</id>
+             <distributionManagement>
+                  <snapshotRepository>
+                       <id>test-snapshot</id>
+                       <url>http://repository.tomatowin.local/nexus/content/repositories/test-snapshot</url>
+                  </snapshotRepository>
+                  <repository>
+                       <id>test-release</id>
+                       <url>http://repository.tomatowin.local/nexus/content/repositories/test-release</url>
+                  </repository>
+             </distributionManagement>
+             <build>
+                  <plugins>
+                       <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>1.6</version>
+                            <executions>
+                                 <execution>
+                                      <id>sign-artifacts</id>
+                                      <phase>verify</phase>
+                                      <goals>
+                                           <goal>sign</goal>
+                                      </goals>
+                                 </execution>
+                            </executions>
+                       </plugin>
+                  </plugins>
+             </build>
         </profile>
     </profiles>
 
@@ -184,6 +220,14 @@ limitations under the License.
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-release-plugin</artifactId>
+                 <version>2.5.3</version>
+                 <configuration>
+                      <releaseProfiles>release</releaseProfiles>
+                 </configuration>
             </plugin>
         </plugins>
 
