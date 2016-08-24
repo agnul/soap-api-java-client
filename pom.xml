@@ -16,14 +16,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.contactlab.api</groupId>
     <artifactId>client</artifactId>
-    <version>2.13.1-SNAPSHOT</version>
+    <version>2.13.1</version>
     <name>ContactLab SOAP API Java Client</name>
     <description>The Java Client for ContactLab SOAP API</description>
     <url>http://github.com/agnul/soap-api-java-client.git</url>
@@ -40,7 +37,7 @@ limitations under the License.
 
     <scm>
 	<developerConnection>scm:git:git@github.com:agnul/soap-api-java-client.git</developerConnection>
-	<tag>maven-central</tag>
+	<tag>client-2.13.1</tag>
     </scm>
 
     <licenses>
@@ -142,7 +139,7 @@ limitations under the License.
                                 <wsdlUrl>${wsdl.url}</wsdlUrl>
                             </wsdlUrls>
                             <extension>true</extension>
-                            <args></args>
+                            <args />
                         </configuration>
                     </execution>
                 </executions>
@@ -260,7 +257,7 @@ limitations under the License.
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore></ignore>
+                                        <ignore />
                                     </action>
                                 </pluginExecution>
                                 <pluginExecution>
@@ -273,7 +270,7 @@ limitations under the License.
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore></ignore>
+                                        <ignore />
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
